@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{default}">
+<head>
+    <title>USER ADD</title>
+</head>
+<body>
+<div layout:fragment="content">
+    <form class="form-signin" th:action="@{/web/user/create}" method="post">
+        <img class="mb-4" src="https://getbootstrap.com/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72" />
+        <h1 class="h3 mb-3 font-weight-normal">Signup Here</h1>
+        <div th:if="${param.error}">
+            Invalid email and password.
+        </div>
+        <div th:if="${param.logout}">
+            You have been logged out.
+        </div>
+        <label for="inputUsername" class="sr-only">Пошта</label>
+        <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Username" required="" />
+        <label for="inputPassword" class="sr-only">Пароль</label>
+        <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required="" />
+        <!--   <label for="inputFullname" class="sr-only">Full Name</label>-->
+        <!--<input type="text" name="fullname" id="inputEmail" class="form-control" placeholder="Fullname" required="" />-->
+
+        <label for="inputSurname" class="sr-only">Surname</label>
+        <input type="text" name="surname" id="inputEmail" class="form-control" placeholder="Surname" required="" />
+
+
+        <label for="inputName" class="sr-only">Name</label>
+        <input type="text" name="name" id="inputEmail" class="form-control" placeholder="Name" required="" />
+
+
+        <label for="inputByFather" class="sr-only">By Father</label>
+        <input type="text" name="byFather" id="inputEmail" class="form-control" placeholder="ByFather" required="" />
+
+
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Створити</button>
+</div>
+</body>
+</html>
