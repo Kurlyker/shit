@@ -95,7 +95,7 @@ public class TicketWebController {
     String getAllMyTickets(Model model,
                            HttpServletRequest request) throws ServletException, IOException {
         String user = request.getUserPrincipal().getName();
-        List<Ticket> ticket = service.getAll();
+        List<Ticket> ticket = service.findByUser(user);
         Collections.reverse(ticket);
         model.addAttribute("tickets", ticket);
         return "myTickets";
